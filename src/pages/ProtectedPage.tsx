@@ -156,13 +156,14 @@ export default function AdminPanel() {
     );
   }
   if (user?.role !== "ADMIN") {
-    return Swal.fire({
+    Swal.fire({
       icon: "error",
       title: "Access Denied",
       text: "You do not have permission to access the Admin Panel.",
     }).then(() => {
       navigate("/");
     });
+    return null;
   }
   return (
     <div className="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
