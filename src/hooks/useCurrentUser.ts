@@ -19,7 +19,7 @@ export default function useCurrentUser() {
         setError(null);
 
         const response = await fetch(
-          "http://localhost:9000/auth/current-user",
+          "https://primetradeaibackend-production.up.railway.app/auth/current-user",
           {
             method: "GET",
             headers: {

@@ -50,13 +50,16 @@ export default function AdminPanel() {
         setError(null);
         setSuccess(null);
 
-        const response = await fetch(`http://localhost:9000/user`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        });
+        const response = await fetch(
+          `https://primetradeaibackend-production.up.railway.app/user`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
 
         if (!response.ok) {
           throw new Error(`Failed to fetch users: ${response.statusText}`);
@@ -105,10 +108,13 @@ export default function AdminPanel() {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:9000/user/${userId}`, {
-          method: "DELETE",
-          credentials: "include",
-        });
+        const response = await fetch(
+          `https://primetradeaibackend-production.up.railway.app/user/${userId}`,
+          {
+            method: "DELETE",
+            credentials: "include",
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to delete user");

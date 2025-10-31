@@ -130,10 +130,13 @@ export default function Home() {
   const handleLogout = async () => {
     setLoggingOut(true);
     try {
-      const res = await fetch("http://localhost:9000/auth/logout", {
-        method: "GET",
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://primetradeaibackend-production.up.railway.app/auth/logout",
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
       const data = await res.json();
       if (data.message === "Logout successful") navigate("/login");
       else Swal.fire({ icon: "error", title: data.message || "Logout Failed" });

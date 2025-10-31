@@ -4,7 +4,7 @@ import type {
   ApiResponse,
 } from "../lib/types";
 
-const BASE_URL = "http://localhost:9000";
+const BASE_URL = "https://primetradeaibackend-production.up.railway.app";
 
 async function fetchJSON(url: string, options: RequestInit = {}) {
   const response = await fetch(url, {
